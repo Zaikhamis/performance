@@ -1,0 +1,47 @@
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+    padding: 1em 2em;
+}
+.emp-title {
+    padding: 1em 1em 0 1em;
+    /* text-align: center; */
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.employee-card {
+    flex: 1;
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    background: rgba(20, 55, 150, .7);
+    border-radius: .2rem;
+    box-shadow: 0px 1px 10px 1px royalblue;
+    height: 200px;
+    flex-wrap: wrap;
+    padding: .2em;
+}
+
+hr { margin: 1em 0; }
+
+.emp-info { display: flex; gap: 1em; }
+
+.info { display: flex; flex-direction: column; gap: .5em; }
+
+.img > i {
+    font-size: 100px;
+    color: aqua;
+    margin: 0 .2em;
+}
+
+.employee-card > .emp-title > i {
+    color: #f66;
+    font-size: larger;
+}

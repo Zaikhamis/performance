@@ -1,0 +1,199 @@
+<section class="evaluate-sec" id="eval-sec">
+  <div class="btn-container" *ngIf="showButton">
+    <button
+      class="start-eval btn btn-primary"
+      id="start-eval"
+      (click)="displayForm()"
+    >
+      Start Evaluation
+    </button>
+  </div>
+
+  <div class="eval-form" id="eval-form" *ngIf="showForm">
+    <section class="form-section table-responsive" id="form-sec">
+      <h3 style="text-align: center">EMPLOYEE PERFORMANCE EVALUATION FORM</h3>
+      <form class="eval-form" id="eval-form">
+        <div class="d-grid gap-2 btn btn-success" style="margin: 1em 0">
+          <span>Employee Information</span>
+        </div>
+
+        <!--  -->
+        <div
+          class="flex-container"
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 1em;
+            align-items: center;
+          "
+        >
+          <div class="col-md-4">
+            <label for="validationCustom01" class="form-label"
+              >Employee Name :
+            </label><br />
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustom01"
+              placeholder="Full Name eg: John Doe"
+              class="btn btn-outline-info"
+              style="cursor: text; text-align: justify"
+              required
+            />
+            <!-- <div class="valid-feedback">Looks good!</div> -->
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom02" class="form-label"
+              >Job Title :
+            </label><br />
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustom02"
+              placeholder="Job Title eg: Lecturer"
+              class="btn btn-outline-info"
+              style="cursor: text; text-align: justify"
+              required
+            />
+            <!-- <div class="valid-feedback">Looks good!</div> -->
+          </div>
+          <div class="col-md-4">
+            <!-- <label for="validationCustomUsername" class="form-label">DateTime : </label> -->
+            <div class="input-group has-validation">
+              <span class="input-group-text btn btn-info" id="inputGroupPrepend"
+                >Date</span
+              >
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="validationCustomUsername"
+                aria-describedby="inputGroupPrepend"
+                class="btn btn-outline-info"
+                required
+              />
+              <!-- <div class="invalid-feedback">Please choose a username.</div> -->
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="validationCustom03" class="form-label"
+              >Review Period : </label
+            > <br />
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustom03"
+              placeholder="Review Period"
+              class="btn btn-outline-info"
+              style="cursor: text"
+              required
+            />
+            <!-- <div class="invalid-feedback">Please provide a valid city.</div> -->
+          </div>
+          <div class="col-md-3">
+            <label for="validationCustom04" class="form-label"
+              >Department :
+            </label>
+            <br />
+            <select
+              class="form-select btn btn-outline-info"
+              id="validationCustom04"
+              required
+            >
+              <option selected disabled value="">Choose...</option>
+              <option value="computer science and IT">
+                Computer Science & IT
+              </option>
+              <option value="school of health">Health</option>
+              <option value="mathematics and statistics">Mathematics</option>
+              <option value="natural science">Natural Science</option>
+            </select>
+            <div class="invalid-feedback">Please select a valid state.</div>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+        <!-- Bootsrap Form ends here-->
+
+        <div
+          class="emp-info d-grid gap-2 btn btn-success"
+          style="margin: 1em 0"
+        >
+          <span>Ratings</span>
+        </div>
+
+        <table class="table table-primary table-striped-columns">
+          <thead class="table table-dark">
+            <tr align="center">
+              <th scope="col"></th>
+              <th scope="col">1 = Poor</th>
+              <th scope="col">2 = Fair</th>
+              <th scope="col">3 = Satisfactory</th>
+              <th scope="col">4 = Good</th>
+              <th scope="col">5 = Excellent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let evalFm of evalForm" align="center">
+              <th scope="row">{{ evalFm.quality }}</th>
+              <td><input type="radio" value="1" class="form-check-input" name="{{ evalFm.name }}" /></td>
+              <td><input type="radio" value="2" class="form-check-input" name="{{ evalFm.name }}" /></td>
+              <td><input type="radio" value="3" class="form-check-input" name="{{ evalFm.name }}" /></td>
+              <td><input type="radio" value="4" class="form-check-input" name="{{ evalFm.name }}" /></td>
+              <td><input type="radio" value="5" class="form-check-input" name="{{ evalFm.name }}" /></td>
+            </tr>
+            <tr align="center">
+              <td colspan="3">Overall Rating Average</td>
+              <td colspan="3">
+                <label for="average" style="font-size: 2em">0%</label>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6">
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary">
+                    Submit Form
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-grid gap-2 btn btn-success" style="margin: 1em 0">
+          <span>Evaluation</span>
+        </div>
+        <div class="additional comments">
+          <span>{{ "Additional Comments" | uppercase }}</span>
+          <div class="add-info" style="margin: 1em 0">
+            <textarea
+              name="add-info"
+              class="form-control btn btn-dark"
+              style="text-align: justify; cursor: text"
+              id="add-inf"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</section>
+
+<style>
+  section.evaluate-sec {
+    /* border: 5px solid red; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .btn-container {
+    text-align: center;
+  }
+
+  .start-eval {
+    width: 50%;
+    height: 3em;
+    margin: 1em auto;
+  }
+</style>

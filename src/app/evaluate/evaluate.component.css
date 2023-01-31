@@ -1,0 +1,45 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+section.form-section.table-responsive {
+  display: flex;
+  flex-direction: column;
+  padding: 0 4em;
+  /* align-items: center;*/
+} 
+
+
+
+.table {
+  border-radius: .35em !important;
+}
+
+.table > thead > tr, .table > tbody > tr {
+  height: 3.2em;
+}
+
+/* .table-form {
+  border: 1px solid wheat;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+}
+
+thead {
+  background-color: antiquewhite;
+  color: black;
+}
+thead > tr, 
+tbody > tr
+{ background-color: antiquewhite; }
+
+tbody {
+  background-color: aliceblue;
+  color: black;
+} */
+/* td,
+th {
+  border-left: 1px solid transparent;
+  border: none transparent;
+  height: 4em;
+} */

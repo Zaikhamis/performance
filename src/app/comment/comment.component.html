@@ -1,0 +1,58 @@
+<section id="comment-section" class="comments">
+    <div class="comment-container" id="comm-container">
+      <div class="form-title" id="form-title">
+        <h2 class="title">Leave <font color="#e66">Us a </font><font color="#e1e1e1">Message</font></h2>
+      </div>
+      <form #comments="ngForm" ngNativeValidate class="comment-form" id="comm-form">
+        <div class="form-groups">
+          <label for="fname">{{ userComments.fullName }}: </label
+          ><input
+            type="text"
+            name="fullName"
+            id="fname"
+            placeholder="Full Name"
+            required
+          />
+        </div>
+        <div class="form-groups">
+          <label for="email">{{ userComments.email }}: </label
+          ><input
+            type="email"
+            name="fullName"
+            id="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="form-groups">
+          <label for="email">{{ userComments.phone_no }}: </label
+          ><input 
+            type="tel"
+            name="fullName"
+            id="email"
+            placeholder="255 766 XXX XXX"
+            pattern="[0-9]"
+            minlength="10"
+            maxlength="12"
+            required
+          />
+        </div>
+        <div class="form-groups">
+          <label for="message">{{ userComments.message }}: </label
+          ><textarea
+            rows="10"
+            name="message"
+            id="message"
+            placeholder="Leave a Message"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-groups">
+          <button type="submit" class="btn-send" id="send">
+            Send <i class="fas fa fa-paper-plane-o"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>

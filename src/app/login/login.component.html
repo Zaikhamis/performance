@@ -1,0 +1,53 @@
+<section class="login-sec" id="login-sec">
+  <h1 class="header-con" style="color: #def; text-decoration: none">
+    User Portal
+  </h1>
+  <h1 class="header-con">Login here</h1>
+  <div class="container-log" id="container-log">
+    <form #form = "ngForm" id="login-form" method="post" (ngSubmit)="onSubmit(form)">
+      <label for="userId"><i class="fas fa fa-user-o"> </i> Username :</label>
+      <input
+        type="text"
+        name="username"
+        id="userId"
+        placeholder="Username"
+        required
+        [(ngModel)] = "userInfo.username"
+        [class.field-error] = "nameField.invalid && form.submitted"
+        #nameField = "ngModel"
+      /><br />
+      <h3 
+      [hidden]="nameField.valid || !form.submitted"
+      style="color: red; border-radius: .3em; padding: .7em 1em; background-color: rgba(200, 80, 80, .3); width: 90%;">
+        Enter a username
+      </h3>
+      <label for="passId"><i class="fas fa fa-lock"> </i> Password :</label>
+      <input
+        type="password"
+        name="uPassword"
+        id="passId"
+        pattern="[a-zA-Z][0-9]"
+        placeholder="Password"
+        required
+        [(ngModel)] = "userInfo.password"
+        #passField = "ngModel"
+        [class.field-error] = "passField.invalid && form.submitted"
+      />
+      <h3 
+      [hidden]="passField.valid || !form.submitted"
+      style="color: red; border-radius: .3em; padding: .7em 1em; background-color: rgba(200, 80, 80, .3); width: 90%;">
+        Enter a password
+      </h3>
+      <button type="submit" id="btn-submit">
+        <i class="fas fa fa-sign-in"></i> Login
+      </button>
+      
+    </form>
+
+    <label for="password-reset">forgot password? </label
+    ><a href="http://" id="resetPass">click here</a>
+
+  </div>
+
+  
+</section>
